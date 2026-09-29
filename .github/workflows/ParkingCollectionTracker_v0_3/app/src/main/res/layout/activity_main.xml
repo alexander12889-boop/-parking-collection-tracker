@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="18dp">
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:text="Parking Collection" android:textStyle="bold" android:textSize="28sp"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:text="Route 12330 · Stuttgart" android:textSize="16sp" android:layout_marginBottom="18dp"/>
+
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:text="1. Vehicle" android:textStyle="bold" android:textSize="18sp"/>
+  <Spinner android:id="@+id/vehicle" android:layout_width="match_parent" android:layout_height="56dp"/>
+
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:text="2. Collection location" android:textStyle="bold" android:textSize="18sp" android:layout_marginTop="10dp"/>
+  <Spinner android:id="@+id/location" android:layout_width="match_parent" android:layout_height="56dp"/>
+  <TextView android:id="@+id/locationInfo" android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:textSize="15sp" android:padding="10dp"/>
+
+  <ImageView android:layout_width="match_parent" android:layout_height="190dp"
+      android:src="@drawable/parking_instruction" android:contentDescription="Parking maneuver instruction"
+      android:scaleType="fitCenter" android:layout_marginTop="6dp"/>
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:text="Drive into the target parking spot. Get very close to the crossbar (target: &lt; 10 cm). Vary offset and approach angle (roughly ±15°). Do not repeat exactly the same setup every time."
+      android:textSize="14sp" android:padding="8dp"/>
+
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:text="3. Maneuver" android:textStyle="bold" android:textSize="18sp" android:layout_marginTop="10dp"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Driving direction"/>
+  <RadioGroup android:id="@+id/direction" android:orientation="horizontal"
+      android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RadioButton android:id="@+id/forward" android:text="↑ Forward" android:checked="true"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <RadioButton android:id="@+id/reverse" android:text="↓ Reverse"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+  </RadioGroup>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Parking side"/>
+  <RadioGroup android:id="@+id/side" android:orientation="horizontal"
+      android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RadioButton android:id="@+id/left" android:text="← Left" android:checked="true"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <RadioButton android:id="@+id/right" android:text="Right →"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+  </RadioGroup>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Adjacent object"/>
+  <Spinner android:id="@+id/variation" android:layout_width="match_parent" android:layout_height="56dp"/>
+
+  <Button android:id="@+id/complete" android:layout_width="match_parent" android:layout_height="82dp"
+      android:text="✓  MANEUVER COMPLETED" android:textSize="18sp" android:textStyle="bold" android:layout_marginTop="14dp"/>
+  <Button android:id="@+id/undo" android:layout_width="match_parent" android:layout_height="50dp"
+      android:text="↶  UNDO LAST MANEUVER" android:layout_marginTop="6dp"/>
+  <TextView android:id="@+id/lastEntry" android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:textSize="14sp" android:paddingTop="8dp"/>
+  <TextView android:id="@+id/stats" android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:textSize="17sp" android:layout_marginTop="16dp" android:paddingBottom="28dp"/>
+ </LinearLayout>
+</ScrollView>
