@@ -26,10 +26,11 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Enable AndroidX
+      - name: Configure Android build
         run: |
           echo "android.useAndroidX=true" > gradle.properties
           echo "android.enableJetifier=true" >> gradle.properties
+          echo "kotlin.jvm.target.validation.mode=warning" >> gradle.properties
 
       - name: Build debug APK
         run: gradle assembleDebug
